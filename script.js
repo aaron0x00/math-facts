@@ -64,13 +64,12 @@ function generateQuestion() {
     } else if (randomOp === "*") {
         answer = num1 * num2;
     } else {
-        num1 = num1 * num2; // Ensure the division is whole number
+        num1 = num1 * num2; // Ensure the division is a whole number
         answer = num1 / num2;
     }
 
     currentQuestion = { num1, num2, operator: randomOp, answer };
     document.getElementById("question").innerText = `${num1} ${randomOp} ${num2} = ?`;
-    return currentQuestion;
 }
 
 function checkAnswer() {
@@ -104,6 +103,12 @@ function printWorksheet() {
     newWindow.print();
 }
 
+// Display current date and user input
 document.addEventListener("DOMContentLoaded", () => {
+    // Set current date
+    const currentDate = new Date().toLocaleDateString();
+    document.getElementById("currentDate").innerText = `Date: ${currentDate}`;
+
+    // Start the game
     startGame();
 });
