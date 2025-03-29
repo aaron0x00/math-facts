@@ -22,12 +22,23 @@ let score = 0;
 let timeLeft = 30;
 let timer;
 let currentQuestion;
+let timerInput = document.getElementById("timerInput");
 
 function startGame() {
+    // Allow the user to set their own timer
+    if (timerInput.value) {
+        timeLeft = parseInt(timerInput.value);
+    } else {
+        timeLeft = 30; // Default to 30 seconds if no input
+    }
+
     score = 0;
-    timeLeft = 30;
     document.getElementById("score").innerText = score;
     document.getElementById("timer").innerText = timeLeft;
+
+    // Enable the answer input field when the game starts
+    document.getElementById("answer").disabled = false;
+
     generateQuestion();
     timer = setInterval(updateTimer, 1000);
 }
@@ -35,6 +46,7 @@ function startGame() {
 function updateTimer() {
     timeLeft--;
     document.getElementById("timer").innerText = timeLeft;
+
     if (timeLeft <= 0) {
         clearInterval(timer);
         endGame();
@@ -59,6 +71,8 @@ function checkAnswer() {
 }
 
 function endGame() {
+    // Disable input when the game ends
+    document.getElementById("answer").disabled = true;
     alert(`Game Over! Your score: ${score}`);
 }
 
