@@ -1,1 +1,27 @@
-hi
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathFacks - Timed Math Practice</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>MathFacks - Timed Math Facts</h1>
+    <p>Solve as many problems as you can before time runs out!</p>
+    
+    <div id="game">
+        <p id="question"></p>
+        <input type="number" id="answer" placeholder="Your answer">
+        <button onclick="checkAnswer()">Submit</button>
+        <p id="feedback"></p>
+        <p>Time left: <span id="timer">30</span> seconds</p>
+        <p>Score: <span id="score">0</span></p>
+    </div>
+
+    <h2>Leaderboard</h2>
+    <ul id="leaderboard"></ul>
+
+    <script src="script.js"></script>
+</body>
+</html>
