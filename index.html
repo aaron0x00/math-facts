@@ -9,13 +9,8 @@
 <body>
     <h1>MathFacks - Timed Math Facts</h1>
     <p>Solve as many problems as you can before time runs out!</p>
-
-    <!-- Name and Date Input Section -->
-    <div id="userInfo">
-        <input type="text" id="userName" placeholder="Enter your name">
-        <span id="currentDate"></span>
-    </div>
     
+    <!-- Game Container -->
     <div id="game">
         <p id="question"></p>
         <input type="number" id="answer" placeholder="Your answer">
@@ -23,11 +18,26 @@
         <p id="feedback"></p>
         <p>Time left: <span id="timer">30</span> seconds</p>
         <p>Score: <span id="score">0</span></p>
+
+        <!-- Timer input field -->
+        <label for="timerInput">Set Timer (seconds):</label>
+        <input type="number" id="timerInput" min="10" max="300" value="30">
+        <button onclick="startGame()">Start Game</button>
     </div>
 
+    <!-- Background Change Button -->
     <button id="changeBackgroundBtn">Change Background</button>
-    <button onclick="printWorksheet()">Print Worksheet</button>
-    
+
+    <!-- Print Worksheet Section -->
+    <div id="printArea">
+        <h2>Print a Math Worksheet</h2>
+        <label for="studentName">Name:</label>
+        <input type="text" id="studentName" placeholder="Enter your name">
+        <label for="date">Date:</label>
+        <input type="date" id="date">
+        <button onclick="printWorksheet()">Print Worksheet</button>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
