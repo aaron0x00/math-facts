@@ -30,14 +30,6 @@ body {
     background-color: rgba(255, 255, 255, 0.8);
 }
 
-/* Styling for the question */
-#question {
-    font-size: 2em;
-    font-weight: bold;
-    color: #000000;
-    animation: fadeIn 2s ease-in-out;
-}
-
 h1 {
     font-size: 2.5em;
     color: #e91e63;
@@ -99,8 +91,9 @@ input[disabled] {
     color: red;
 }
 
-/* Fun Animations */
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+/* Hide print button in print mode */
+@media print {
+    button {
+        display: none;
+    }
 }
