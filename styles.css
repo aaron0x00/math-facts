@@ -34,7 +34,7 @@ body {
 #question {
     font-size: 2em;
     font-weight: bold;
-    color: black;
+    color: #ffffff;
     animation: fadeIn 2s ease-in-out;
 }
 
@@ -50,4 +50,57 @@ input {
     margin-top: 10px;
     border: 2px solid #4a90e2;
     border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #007aff;
+}
+
+#changeBackgroundBtn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+#changeBackgroundBtn:hover {
+    background-color: #e040fb;
+}
+
+/* Prevent typing after game ends */
+input[disabled] {
+    background-color: #f0f0f0;
+    cursor: not-allowed;
+}
+
+/* Feedback on correct or wrong answer */
+#feedback {
+    font-size: 1.5em;
+    margin-top: 10px;
+    color: green;
+}
+
+#feedback.wrong {
+    color: red;
+}
+
+/* Fun Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
