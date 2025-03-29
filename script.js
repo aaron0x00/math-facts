@@ -87,18 +87,24 @@ function endGame() {
     alert(`Game Over! Your score: ${score}`);
 }
 
-// Function to print a worksheet
+// Function to print a worksheet with answers
 function printWorksheet() {
     let worksheet = "Math Practice Worksheet\n\n";
+    let answers = "\n\nAnswer Key:\n\n";
+
     for (let i = 0; i < 20; i++) {
         let num1 = Math.floor(Math.random() * 20) + 1;
         let num2 = Math.floor(Math.random() * 20) + 1;
         let operations = ["+", "-", "*", "/"];
         let randomOp = operations[Math.floor(Math.random() * operations.length)];
+        let answer = eval(`${num1} ${randomOp} ${num2}`);
+
         worksheet += `${num1} ${randomOp} ${num2} = _______\n`;
+        answers += `${num1} ${randomOp} ${num2} = ${answer}\n`;
     }
+
     let newWindow = window.open("", "", "width=600,height=800");
-    newWindow.document.write(`<pre>${worksheet}</pre>`);
+    newWindow.document.write(`<pre>${worksheet + answers}</pre>`);
     newWindow.print();
 }
 
