@@ -1,0 +1,99 @@
+/* General styling */
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    text-align: center;
+    background-color: #ffeb3b;
+    color: #4a90e2;
+    transition: background-color 0.5s ease;
+}
+
+/* Game container */
+#game {
+    margin: 20px auto;
+    padding: 30px;
+    width: 350px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    background-image: url('https://www.w3schools.com/w3images/forest.jpg');
+    background-size: cover;
+    transition: background-color 0.5s ease;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #e91e63;
+}
+
+input {
+    width: 120px;
+    padding: 10px;
+    font-size: 1.2em;
+    margin-top: 10px;
+    border: 2px solid #4a90e2;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #007aff;
+}
+
+#changeBackgroundBtn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+#changeBackgroundBtn:hover {
+    background-color: #e040fb;
+}
+
+.question {
+    font-size: 2em;
+    font-weight: bold;
+    color: #ffffff;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Timer and Score */
+p {
+    font-size: 1.2em;
+}
+
+/* Feedback on correct or wrong answer */
+#feedback {
+    font-size: 1.5em;
+    margin-top: 10px;
+    color: green;
+}
+
+#feedback.wrong {
+    color: red;
+}
+
+/* Fun Animations */
+@keyframes grow {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.2); }
+}
