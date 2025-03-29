@@ -89,7 +89,7 @@ function endGame() {
 
 // Function to print a worksheet with answers
 function printWorksheet() {
-    let userName = document.getElementById("userName").value || "Name: __________";
+    let userName = document.getElementById("studentName").value || "Name: __________";
     let currentDate = new Date().toLocaleDateString();
 
     let worksheet = `Math Practice Worksheet\n${userName}    Date: ${currentDate}\n\n`;
