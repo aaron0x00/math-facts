@@ -97,7 +97,14 @@ function printWorksheet() {
         let num2 = Math.floor(Math.random() * 12) + 1;
         let operations = ["+", "-", "*", "/"];
         let randomOp = operations[Math.floor(Math.random() * operations.length)];
-        let answer = eval(`${num1} ${randomOp} ${num2}`);
+        let answer = 0; 
+      
+        if(randomOp == "/"){
+          num2 = num1 * num2;
+          answer = num1;
+        }else{
+          answer = eval(`${num1} ${randomOp} ${num2}`);
+        }
 
         worksheet += `${num1} ${randomOp} ${num2} = _______\n`;
         answers += `${num1} ${randomOp} ${num2} = ${answer}\n`;
