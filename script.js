@@ -70,6 +70,7 @@ function generateQuestion() {
 
     currentQuestion = { num1, num2, operator: randomOp, answer };
     document.getElementById("question").innerText = `${num1} ${randomOp} ${num2} = ?`;
+    return currentQuestion;
 }
 
 function checkAnswer() {
@@ -93,15 +94,9 @@ function printWorksheet() {
     let answers = "\n\nAnswer Key:\n\n";
 
     for (let i = 0; i < 50; i++) {
-        let num1 = Math.floor(Math.random() * 12) + 1;
-        let num2 = Math.floor(Math.random() * 12) + 1;
-        let operations = ["+", "-", "*", "/"];
-        let randomOp = operations[Math.floor(Math.random() * operations.length)];
-        
-        let answer = eval(`${num1} ${randomOp} ${num2}`);
-
-        worksheet += `${num1} ${randomOp} ${num2} = _______\n`;
-        answers += `${num1} ${randomOp} ${num2} = ${answer}\n`;
+        let question = generateQuestion();
+        worksheet += `${question.num1} ${question.operator} ${question.num2} = _______\n`;
+        answers += `${question.num1} ${question.operator} ${question.num2} = ${question.answer}\n`;
     }
 
     let newWindow = window.open("", "", "width=600,height=800");
