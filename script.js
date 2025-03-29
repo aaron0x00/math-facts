@@ -10,7 +10,7 @@ const backgrounds = [
 // Function to change the background
 function changeBackground() {
     const randomBackground = backgrounds[Math.floor(Math.random() * backgrounds.length)];
-    document.getElementById("game").style.backgroundImage = randomBackground;
+    document.body.style.backgroundImage = randomBackground;
 }
 
 // Event listener for background change button
@@ -64,7 +64,7 @@ function generateQuestion() {
     } else if (randomOp === "*") {
         answer = num1 * num2;
     } else {
-        num1 = num1 * num2; // Ensure the division is a whole number
+        num1 = num1 * num2; // Ensure the division is whole number
         answer = num1 / num2;
     }
 
@@ -89,13 +89,32 @@ function endGame() {
 
 // Function to print a worksheet with answers
 function printWorksheet() {
-    let worksheet = "Math Practice Worksheet\n\n";
+    let userName = document.getElementById("userName").value || "Name: __________";
+    let currentDate = new Date().toLocaleDateString();
+
+    let worksheet = `Math Practice Worksheet\n${userName}    Date: ${currentDate}\n\n`;
     let answers = "\n\nAnswer Key:\n\n";
 
     for (let i = 0; i < 50; i++) {
-        let question = generateQuestion();
-        worksheet += `${question.num1} ${question.operator} ${question.num2} = _______\n`;
-        answers += `${question.num1} ${question.operator} ${question.num2} = ${question.answer}\n`;
+        let num1 = Math.floor(Math.random() * 12) + 1;
+        let num2 = Math.floor(Math.random() * 12) + 1;
+        let operations = ["+", "-", "*", "/"];
+        let randomOp = operations[Math.floor(Math.random() * operations.length)];
+
+        let answer;
+        if (randomOp === "+") {
+            answer = num1 + num2;
+        } else if (randomOp === "-") {
+            answer = num1 - num2;
+        } else if (randomOp === "*") {
+            answer = num1 * num2;
+        } else {
+            num1 = num1 * num2; // Ensure division is whole number
+            answer = num1 / num2;
+        }
+
+        worksheet += `${num1} ${randomOp} ${num2} = _______\n`;
+        answers += `${num1} ${randomOp} ${num2} = ${answer}\n`;
     }
 
     let newWindow = window.open("", "", "width=600,height=800");
@@ -103,12 +122,6 @@ function printWorksheet() {
     newWindow.print();
 }
 
-// Display current date and user input
 document.addEventListener("DOMContentLoaded", () => {
-    // Set current date
-    const currentDate = new Date().toLocaleDateString();
-    document.getElementById("currentDate").innerText = `Date: ${currentDate}`;
-
-    // Start the game
     startGame();
 });
