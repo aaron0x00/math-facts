@@ -4,7 +4,7 @@ const backgrounds = [
     "url('https://www.w3schools.com/w3images/lights.jpg')",
     "url('https://www.w3schools.com/w3images/mountains.jpg')",
     "url('https://www.w3schools.com/w3images/snow.jpg')",
-    "url('https://www.w3schools.com/w3images/underwater.jpg')"
+    "url('https://slidechef.net/wp-content/uploads/2023/10/Math-Background-768x432.jpg')"
 ];
 
 // Function to change the background
