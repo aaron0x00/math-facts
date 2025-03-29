@@ -62,15 +62,21 @@ function endGame() {
     alert(`Game Over! Your score: ${score}`);
 }
 
+// Add an array of background images
+const backgrounds = [
+    "url('https://www.w3schools.com/w3images/forest.jpg')",
+    "url('https://www.w3schools.com/w3images/lights.jpg')",
+    "url('https://www.w3schools.com/w3images/mountains.jpg')",
+    "url('https://www.w3schools.com/w3images/snow.jpg')",
+    "url('https://www.w3schools.com/w3images/underwater.jpg')"
+];
+
+// Function to change the background to a random one
 function changeBackground() {
-    const backgrounds = [
-        'https://www.w3schools.com/w3images/forest.jpg',
-        'https://www.w3schools.com/w3images/ocean.jpg',
-        'https://www.w3schools.com/w3images/mountains.jpg',
-        'https://www.w3schools.com/w3images/snow.jpg',
-    ];
-    let randomIndex = Math.floor(Math.random() * backgrounds.length);
-    document.getElementById("game").style.backgroundImage = `url(${backgrounds[randomIndex]})`;
+    // Pick a random background from the array
+    const randomBackground = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+    // Apply the new background to the game container
+    document.getElementById("game").style.backgroundImage = randomBackground;
 }
 
 document.getElementById("changeBackgroundBtn").addEventListener("click", changeBackground);
