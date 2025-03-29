@@ -3,32 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MathFacks - Fun Math Practice</title>
+    <title>MathFacks - Timed Math Practice</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>🎉 MathFacks - Fun Math Practice! 🎉</h1>
+    <h1>MathFacks - Timed Math Facts</h1>
     <p>Solve as many problems as you can before time runs out!</p>
 
-    <!-- Timer input -->
-    <label for="timerInput">Set Timer (seconds): </label>
-    <input type="number" id="timerInput" placeholder="Enter time" min="5" max="60" value="30">
-    <button onclick="startGame()">Start Game</button>
-
+    <!-- Name and Date Input Section -->
+    <div id="userInfo">
+        <input type="text" id="userName" placeholder="Enter your name">
+        <span id="currentDate"></span>
+    </div>
+    
     <div id="game">
         <p id="question"></p>
         <input type="number" id="answer" placeholder="Your answer">
         <button onclick="checkAnswer()">Submit</button>
         <p id="feedback"></p>
-        <p>⏳ Time left: <span id="timer">30</span> seconds</p>
-        <p>⭐ Score: <span id="score">0</span></p>
+        <p>Time left: <span id="timer">30</span> seconds</p>
+        <p>Score: <span id="score">0</span></p>
     </div>
 
     <button id="changeBackgroundBtn">Change Background</button>
     <button onclick="printWorksheet()">Print Worksheet</button>
-
-    <div id="printable" class="hidden"></div>
-
+    
     <script src="script.js"></script>
 </body>
 </html>
