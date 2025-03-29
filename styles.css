@@ -34,7 +34,7 @@ body {
 #question {
     font-size: 2em;
     font-weight: bold;
-    color: #0000;
+    color: #000000;
     animation: fadeIn 2s ease-in-out;
 }
 
